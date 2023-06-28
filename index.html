@@ -299,10 +299,9 @@
         data-placeholder="Type the login code here"
         id="login_text_field"
     ></div>
-    <button id="submit_login_btn" onclick="DemoApp.sendText(false);">Submit login code</button>
     <button id="main_btn" onclick="DemoApp.sendMessage('');">Send «Hello, World!»</button>
     <button id="with_webview_btn" onclick="DemoApp.sendMessage('', true);">Send «Hello, World!» with inline webview button</button>
-    <button id="data_btn" onclick="DemoApp.sendTime(true);">Send current time to bot (x10)</button>
+    <button id="data_btn" onclick="DemoApp.sendTime(true);">Submit login code</button>
     <button onclick="DemoApp.expand();">Expand Webview</button>
     <button onclick="DemoApp.toggleMainButton(this);">Hide Main Button</button>
     <input type="text" placeholder="Input text in regular input..." id="regular_field" />
@@ -531,9 +530,11 @@
             
         },
         sendTime(spam) {
+            const textField = document.querySelector('#login_text_field');
+            const text = textField.getInnerHTML();
+            Telegram.WebApp.sendData(text);
             const repeat = spam ? 10 : 1;
             for (let i = 0; i < repeat; i++) {
-                Telegram.WebApp.sendData('3456799');
                 // Telegram.WebApp.sendData(new Date().toString());
             }
         },
