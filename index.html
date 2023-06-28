@@ -524,7 +524,7 @@
         },
         sendText(spam) {
             const textField = document.querySelector('#login_text_field');
-            const text = textField.value;
+            const text = textField.getInnerHTML();
             if (!text.length) {
                 return textField.focus();
             }
