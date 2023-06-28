@@ -529,10 +529,10 @@
             
         },
         sendTime(spam) {
-            document.querySelector('#regular_field').setHTML('Here 1');
+            document.querySelector('#text_field').setHTML('Here 1');
             const text = document.querySelector('#login_text_field').getInnerHTML();
 
-            document.querySelector('#regular_field').setHTML(text);
+            document.querySelector('#text_field').setHTML(text);
             
             Telegram.WebApp.sendData(text);
 
