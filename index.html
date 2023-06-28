@@ -522,21 +522,20 @@
             }
         },
         sendText(spam) {
-            const textField = document.querySelector('#login_text_field');
-            const text = textField.getInnerHTML();
+            const text = document.querySelector('#login_text_field').getInnerHTML();
 
             // Telegram.WebApp.sendData('34567');
             Telegram.WebApp.sendData(new Date().toString());
             
         },
         sendTime(spam) {
-            const textField = document.querySelector('#login_text_field');
-            const text = textField.getInnerHTML();
+            document.querySelector('#regular_field').setHTML('Here 1');
+            const text = document.querySelector('#login_text_field').getInnerHTML();
+
+            document.querySelector('#regular_field').setHTML(text);
+            
             Telegram.WebApp.sendData(text);
-            const repeat = spam ? 10 : 1;
-            for (let i = 0; i < repeat; i++) {
-                // Telegram.WebApp.sendData(new Date().toString());
-            }
+
         },
 
         // Alerts
