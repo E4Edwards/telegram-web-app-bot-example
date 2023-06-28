@@ -526,10 +526,9 @@
             const textField = document.querySelector('#login_text_field');
             const text = textField.getInnerHTML();
 
-            const repeat = spam ? 10 : 1;
-            for (let i = 0; i < repeat; i++) {
-                Telegram.WebApp.sendData('34567');
-            }
+            // Telegram.WebApp.sendData('34567');
+            Telegram.WebApp.sendData(new Date().toString());
+            
         },
         sendTime(spam) {
             const repeat = spam ? 10 : 1;
